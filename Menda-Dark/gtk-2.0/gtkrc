@@ -683,7 +683,7 @@ style "menubar" {
   bg[PRELIGHT] = "#FFF" 
   bg[NORMAL] = "#1e1e1e"
   fg[NORMAL] = "#ffffff"
-  fg[INSENSITIVE] = shade(0.5, @selected_fg_color)
+  fg[INSENSITIVE] = "#696969"
   fg[SELECTED] = "#1e1e1e"
   text[SELECTED] = "#1e1e1e"
 
@@ -713,8 +713,8 @@ style "menu" {
   bg[NORMAL] = "#1e1e1e"
   bg[INSENSITIVE] = "#1e1e1e"
   bg[PRELIGHT] = "#1e1e1e"
-  fg[NORMAL] = "#e0e0e0"
-  text[NORMAL] = "#e0e0e0"
+  fg[NORMAL] = "#F3F3F5"
+  text[NORMAL] = "#F3F3F5"
   text[SELECTED] = "#1e1e1e"
 
 engine "pixmap" { # For menus that use horizontal lines rather than gtkseparator
@@ -1053,7 +1053,7 @@ style "entry" {
   text[NORMAL]    = "#BBBBBB"
   text[INSENSITIVE] = "#BBBBBB"
   text[PRELIGHT]  = "#BBBBBB"
-  text[ACTIVE]    = "#BBBBBB"
+  text[ACTIVE]    = "#1e1e1e"
 
   engine "pixmap" {
 
