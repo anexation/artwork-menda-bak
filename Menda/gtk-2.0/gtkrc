@@ -1,4 +1,4 @@
-gtk-color-scheme = "base_color:#FFFFFF\nfg_color:#3c3c3e\ntooltip_fg_color:#FFFFFF\nselected_bg_color:#8CBC65\nselected_fg_color:#ffffff\ntext_color:#3c3c3e\nbg_color:#F3F3F5\ninsensitive_bg_color:#F4F4F2\ntooltip_bg_color:#343434\nmenubar_bg_color:#1e1e1e\nmenubar_fg_color:#e0e0e0"
+gtk-color-scheme = "base_color:#FFFFFF\nfg_color:#3c3c3e\ntooltip_fg_color:#FFFFFF\nselected_bg_color:#8CBC65\nselected_fg_color:#1e1e1e\ntext_color:#3c3c3e\nbg_color:#F3F3F5\ninsensitive_bg_color:#F4F4F2\ntooltip_bg_color:#343434\nmenubar_bg_color:#1e1e1e\nmenubar_fg_color:#e0e0e0"
 
 gtk-icon-sizes		= "gtk-button=16,16" # This makes button icons smaller.
 gtk-auto-mnemonics = 1
@@ -716,7 +716,7 @@ style "menu" {
   bg[INSENSITIVE] = "#1e1e1e"
   bg[PRELIGHT] = "#1e1e1e"
   fg[NORMAL] = @menubar_fg_color
-  text[NORMAL] = "#e0e0e0"
+  text[NORMAL] = "#EAEAEA"
   text[SELECTED] = "#1e1e1e"
 
 
@@ -2404,14 +2404,15 @@ style "null" {
   }
 }
 
+
 # Text Style
 style "text" {
 
   base[NORMAL] = "#ff0000"
-		
+    
   engine "murrine" {
-    text_shade = 0.7
-    textstyle = 2
+    
+    textstyle = 3
   }
 }
 
@@ -2419,10 +2420,10 @@ style "text" {
 style "notebook-text" {
   #fg[INSENSITIVE] = "#2c2e2f"
   #text[INSENSITIVE] = "#2c2e2f"
-	
+  
   engine "murrine" {
-    text_shade 	= 0.6
-    textstyle 	= 2
+  
+    textstyle   = 3
   }
 }
 
@@ -2511,14 +2512,16 @@ widget "*openoffice-toplevel*GtkSpinButton"                         style "libre
 widget "*libreoffice-toplevel*GtkEntry"                             style "libreoffice_entry"
 widget "*libreoffice-toplevel*GtkSpinButton"                        style "libreoffice_entry"
 
+
 # XFCE desktop icon text looks weird when murrine textstyle is on.
 style "xfdesktop-icon-view"
 {
 	#font_name = "bold"
 	XfdesktopIconView::label-alpha = 0
 	XfdesktopIconView::selected-label-alpha = 60
-	fg[NORMAL] = shade (0.9, @selected_fg_color)
-	fg[ACTIVE] = @selected_fg_color
+	fg[NORMAL] = "#F1F1F1"
+	fg[ACTIVE] = "#F1F1F1"
+	fg[SELECTED] = "#F1F1F1"
 	engine "murrine"
 	{
 		textstyle = 5
@@ -2532,11 +2535,9 @@ widget_class "*XfdesktopIconView*" style "xfdesktop-icon-view"
 style "whisker-style"
 {
   bg[NORMAL] = @bg_color
-  bg[ACTIVE] = darker (@bg_color)
-  bg[PRELIGHT] = darker (@bg_color)
+  bg[ACTIVE] = @bg_color
+  bg[PRELIGHT] = @bg_color
   fg[PRELIGHT] = @selected_fg_color
   fg[ACTIVE] = @selected_fg_color
 }
 widget "whiskermenu-window*" style "whisker-style"
-
-
