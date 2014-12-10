@@ -2343,6 +2343,8 @@ style "eclipse-tooltips" {
 # Chromium
 style "chrome-gtk-frame" {
 
+  engine "mist" {}
+
   ChromeGtkFrame::frame-color = "#1e1e1e"
   ChromeGtkFrame::inactive-frame-color = "#1e1e1e"
 
@@ -2513,3 +2515,10 @@ style "whisker-style"
   fg[ACTIVE] = @bg_color
 }
 widget "whiskermenu-window*" style "whisker-style"
+
+# Working transparency using Mist engine for GtkImage. Thanks sixsixfive from the Xfce community for the tip.
+style "gtklabelimage" {
+  engine "mist" {}
+}
+class "GtkImage"                                                    style"gtklabelimage"
+#class "GtkLabel"                                                    style"gtklabelimage"   # i don't think this is beneficial for us, but leaving it here commented for now
